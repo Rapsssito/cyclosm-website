@@ -28,11 +28,5 @@ async function loadLocalization(locale) {
 
 window.addEventListener('load', () => {
     const userLang = navigator.language || navigator.userLanguage;
-    let locale = 'en';
-    if (userLang.startsWith('fr')) {
-        locale = 'fr';
-    } else if (userLang.startsWith('es')) {
-        locale = 'es';
-    }
-    loadLocalization(locale);
+    loadLocalization(userLang);
 });
