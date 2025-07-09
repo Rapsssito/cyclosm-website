@@ -25,6 +25,7 @@ async function loadLocalization(locale = 'en') {
             banana.load(data, loc);
             banana.setLocale(loc);
             dataLoaded = true;
+            console.log(`Localization loaded for locale: ${loc}`);
             break;
         } catch (error) {
             console.error(`Error parsing localization file for ${loc}:`, error);
@@ -36,7 +37,6 @@ async function loadLocalization(locale = 'en') {
         console.error(`Failed to load localization file for: ${locale}`);
         return;
     }
-    console.log(`Localization loaded for locale: ${loc}`);
 
     document.querySelectorAll('.i18n').forEach(element => {
         const message = element.dataset.i18n;
